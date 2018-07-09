@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -34,7 +35,8 @@ public class Salarios {
                 "\n4: Para leer la lista de empleados."+
                 "\n5: Para retirarle dinero a un empleado"+
                 "\n6: Para agregarle dinero a un empleado"+
-                "\n7: Para actualizar el nombre de un empleado", "Menu de opciones",
+                "\n7: Para actualizar el nombre de un empleado"+
+                "\n8: Para ordenar la lista alfabeticamente", "Menu de opciones",
                 JOptionPane.INFORMATION_MESSAGE);
         a = Integer.parseInt(input);
         switch(a) {
@@ -123,17 +125,6 @@ public class Salarios {
             case 2:
                     	ArrayList<Object> ejempli = new ArrayList<Object>();
                         try{
-	/*
-	ejempli.add("Clientes.txt");
-	for(int i = 0; i <= ejempli.size() - 1; i++)
-	    System.out.println(ejempli.get(i));
-
-
-	Iterator<String> it = ejempli.iterator();
-	while(it.hasNext())
-	    System.out.println(it.next());
-	ejempli.set(2,"joaquin");
-	*/
 	
 	File fileClientes = new File("Clientes.txt");
 	if(fileClientes.exists()) {
@@ -161,13 +152,6 @@ public class Salarios {
 	ejempli.remove(borrador-1);
 	
 
-	/*
-	FileWriter hope = new FileWriter("Clientes.txt");
-	for(String strr: ejempli) {
-	    hope.write(strr);
-	}
-	hope.close();
-	*/
 	FileWriter stt = new FileWriter("Clientes.txt");
 	int tam = ejempli.size();
 	for(int i = 0; i < tam; i++){
@@ -186,22 +170,9 @@ public class Salarios {
                 
                 
             case 3:
-                //System.out.println("Jod");
         try{
-	//ArrayList<String> ejempli = new ArrayList<String>();
         Object trabajos[][];
         trabajos = new Object[10][5];
-	/*
-	ejempli.add("Clientes.txt");
-	for(int i = 0; i <= ejempli.size() - 1; i++)
-	    System.out.println(ejempli.get(i));
-
-
-	Iterator<String> it = ejempli.iterator();
-	while(it.hasNext())
-	    System.out.println(it.next());
-	ejempli.set(2,"joaquin");
-	*/
 	
 	File fileClientes = new File("Clientes.txt");
 	if(fileClientes.exists()) {
@@ -249,32 +220,6 @@ public class Salarios {
         
         
 	lecturaMenu.close();
-	/*System.out.println("Recuerda ingresar tu nombre completo: ");
-	Scanner inputtt = new Scanner(System.in);
-        
-	//int borrador = input.nextInt();
-        System.out.println("Ingresa el nombre: ");
-        String nombrador = inputtt.next();
-        System.out.println("Ingresa el apellido paterno: ");
-        String apeidador = inputtt.next();
-        System.out.println("Ingresa el apellido materno: ");
-        String apiadador = inputtt.next();
-        String nonombrador = nombrador + " " + apeidador + " " + apiadador;
-        trabajos[3][0] = nonombrador;
-        
-        System.out.println(trabajos[3][0]);
-
-	//ejempli.add(nonombrador);
-//	        Collections.sort(ejempli,String.CASE_INSENSITIVE_ORDER);
-
-
-	/*
-	FileWriter hope = new FileWriter("Clientes.txt");
-	for(String strr: ejempli) {
-	    hope.write(strr);
-	}
-	hope.close();
-	*/
 	FileWriter stt = new FileWriter("Clientes.txt");
 	//int tam = ejempli.size();
 	for(int i = 0; i < 1; i++){
@@ -308,17 +253,6 @@ public class Salarios {
                                               
         		
 	ArrayList<Object> ejemplii = new ArrayList<Object>();
-	/*
-	ejempli.add("Clientes.txt");
-	for(int i = 0; i <= ejempli.size() - 1; i++)
-	    System.out.println(ejempli.get(i));
-
-
-	Iterator<String> it = ejempli.iterator();
-	while(it.hasNext())
-	    System.out.println(it.next());
-	ejempli.set(2,"joaquin");
-	*/
 	
 	File fileClientess = new File("Clientes.txt");
 	if(fileClientess.exists()) {
@@ -346,17 +280,6 @@ public class Salarios {
             case 5:
                     	ArrayList<Object> ejemplito = new ArrayList<Object>();
                         try{
-	/*
-	ejempli.add("Clientes.txt");
-	for(int i = 0; i <= ejempli.size() - 1; i++)
-	    System.out.println(ejempli.get(i));
-
-
-	Iterator<String> it = ejempli.iterator();
-	while(it.hasNext())
-	    System.out.println(it.next());
-	ejempli.set(2,"joaquin");
-	*/
 	
 	File fileClientes = new File("Clientes.txt");
 	if(fileClientes.exists()) {
@@ -373,12 +296,6 @@ public class Salarios {
             
 	    System.out.println(str);
             
-            //sep = str.split("-");
-            /*
-                for(String aaa: sep)
-                System.out.println(aaa);
-            */
-            //ejemplito.spliterator();
 	    ejemplito.add(str);
 	    System.out.println(ejemplito.size());
 	}
@@ -406,7 +323,6 @@ public class Salarios {
         System.out.println(sep[1]);
         String vgaro = sep[1];
         double varo = Double.parseDouble(vgaro);
-        //ejemplito.remove(borrador-1);
         
         System.out.println("Cuánto dinero quieres sacar?: ");
         
@@ -426,28 +342,6 @@ public class Salarios {
         
         
         
-        
-        /*
-        double dd = 0;
-        dd = (double) jeje;
-        
-        System.out.println("Saca varo");
-        
-        double sacador = inputt.nextDouble();
-        double money = dd - sacador;
-        System.out.println(money);
-        */
-        //double converse = Double.parseDouble(jeje);
-	//ejemplito.remove(borrador-1);
-	
-
-	/*
-	FileWriter hope = new FileWriter("Clientes.txt");
-	for(String strr: ejempli) {
-	    hope.write(strr);
-	}
-	hope.close();
-	*/
 	FileWriter stt = new FileWriter("Clientes.txt");
 	int tam = ejemplito.size();
 	for(int i = 0; i < tam; i++){
@@ -468,17 +362,6 @@ public class Salarios {
                 
                     	ArrayList<Object> ejemplar = new ArrayList<Object>();
                         try{
-	/*
-	ejempli.add("Clientes.txt");
-	for(int i = 0; i <= ejempli.size() - 1; i++)
-	    System.out.println(ejempli.get(i));
-
-
-	Iterator<String> it = ejempli.iterator();
-	while(it.hasNext())
-	    System.out.println(it.next());
-	ejempli.set(2,"joaquin");
-	*/
 	
 	File fileClientes = new File("Clientes.txt");
 	if(fileClientes.exists()) {
@@ -495,12 +378,6 @@ public class Salarios {
             
 	    System.out.println(str);
             
-            //sep = str.split("-");
-            /*
-                for(String aaa: sep)
-                System.out.println(aaa);
-            */
-            //ejemplito.spliterator();
 	    ejemplar.add(str);
 	    System.out.println(ejemplar.size());
 	}
@@ -528,7 +405,6 @@ public class Salarios {
         System.out.println(sep[1]);
         String vgaro = sep[1];
         double varo = Double.parseDouble(vgaro);
-        //ejemplito.remove(borrador-1);
         
         System.out.println("¿Cuánto dinero quieres depositar?: ");
         
@@ -544,32 +420,6 @@ public class Salarios {
         Object completo = nombreee + "-" + varoF;
         
         ejemplar.set(borrador-1, completo);
-        
-        
-        
-        
-        
-        /*
-        double dd = 0;
-        dd = (double) jeje;
-        
-        System.out.println("Saca varo");
-        
-        double sacador = inputt.nextDouble();
-        double money = dd - sacador;
-        System.out.println(money);
-        */
-        //double converse = Double.parseDouble(jeje);
-	//ejemplito.remove(borrador-1);
-	
-
-	/*
-	FileWriter hope = new FileWriter("Clientes.txt");
-	for(String strr: ejempli) {
-	    hope.write(strr);
-	}
-	hope.close();
-	*/
 	FileWriter stt = new FileWriter("Clientes.txt");
 	int tam = ejemplar.size();
 	for(int i = 0; i < tam; i++){
@@ -632,7 +482,6 @@ public class Salarios {
         System.out.println(sep[0]);
         String vgaro = sep[1];
         double varo = Double.parseDouble(vgaro);
-        //ejemplito.remove(borrador-1);
         
         System.out.println("¿Ahora cómo te vas a llamar?: ");
         
@@ -673,6 +522,47 @@ public class Salarios {
         }catch(Exception e){
             System.out.println("Ha ocurrido un error con el archivo");
         }                break;
+ 
+        
+            case 8:
+                    	ArrayList<String> eje = new ArrayList<String>();
+                        try{
+	
+	File fileClientes = new File("Clientes.txt");
+	if(fileClientes.exists()) {
+	    System.out.println("El archivo Clientes.txt no puede ser eliminado");
+	    System.out.println("Elige el indice del cliente que quieres eliminar");
+	}
+
+        
+	BufferedReader lecturaMenu = new BufferedReader(new FileReader("Clientes.txt"));
+	String str;
+	while((str = lecturaMenu.readLine()) != null) {
+	    System.out.println(str);
+	    eje.add(str);
+	    System.out.println(eje.size());
+	}
+	lecturaMenu.close();
+	    
+        Collections.sort(eje, String.CASE_INSENSITIVE_ORDER);
+
+	FileWriter stt = new FileWriter("Clientes.txt");
+	int tam = eje.size();
+	for(int i = 0; i < tam; i++){
+	    String strr = eje.get(i).toString();
+	    stt.write(strr);
+	    if(i < tam - 1)
+		stt.write("\n");
+	}
+	stt.close();
+	System.out.println(eje);
+	
+        }catch(Exception e){
+            System.out.println("Ha ocurrido un error con el archivo");
+        }
+                break;
+                
+        
         
             default:
                 System.out.println("Ha ocurrido un error al elegir opciones");
