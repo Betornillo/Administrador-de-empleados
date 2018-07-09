@@ -31,7 +31,9 @@ public class Salarios {
                 "\n1: Para agregar un cliente."+
                 "\n2: Para eliminar un cliente."+
                 "\n3: Para eliminar a todos los clientes."+
-                "\n4: Para leer la lista de clientes.", "Menu de opciones",
+                "\n4: Para leer la lista de clientes."+
+                "\n5: Para retirarle dinero a un cliente"+
+                "\n6: Para agregarle dinero a un cliente", "Menu de opciones",
                 JOptionPane.INFORMATION_MESSAGE);
         a = Integer.parseInt(input);
         switch(a) {
@@ -357,8 +359,8 @@ public class Salarios {
 	
 	File fileClientes = new File("Clientes.txt");
 	if(fileClientes.exists()) {
-	    System.out.println("El archivo Clientes.txt no puede ser eliminado");
-	    System.out.println("Elige el indice del cliente que quieres eliminar");
+	    System.out.println("El archivo Clientes.txt no debe ser eliminado");
+	    System.out.println("¿A que empleado quiere retirarle dinero?");
 	}
 
         
@@ -380,7 +382,7 @@ public class Salarios {
 	    System.out.println(ejemplito.size());
 	}
 	lecturaMenu.close();
-	System.out.println("cual quieres borrar?");
+	System.out.println("¿cual quieres elegir?");
 	Scanner inputt = new Scanner(System.in);
 	int borrador = inputt.nextInt();
 	if(borrador > ejemplito.size()) {
@@ -388,12 +390,17 @@ public class Salarios {
 	    return;
 	} else {
 	
+        System.out.println("Has elegido al empleado: ");    
+            
         String jeje = ejemplito.get(borrador - 1).toString();
         System.out.println(jeje);
         
         sep = jeje.split("-");
         for(String aaa:sep)
             System.out.println(aaa);
+        
+        System.out.println("Actualmente tienes: ");
+        
         
         System.out.println(sep[1]);
         String vgaro = sep[1];
@@ -455,8 +462,133 @@ public class Salarios {
             System.out.println("Ha ocurrido un error con el archivo");
         }                break;
                 
+            case 6:
+                int ooo = 0;
+                
+                    	ArrayList<Object> ejemplar = new ArrayList<Object>();
+                        try{
+	/*
+	ejempli.add("Clientes.txt");
+	for(int i = 0; i <= ejempli.size() - 1; i++)
+	    System.out.println(ejempli.get(i));
+
+
+	Iterator<String> it = ejempli.iterator();
+	while(it.hasNext())
+	    System.out.println(it.next());
+	ejempli.set(2,"joaquin");
+	*/
+	
+	File fileClientes = new File("Clientes.txt");
+	if(fileClientes.exists()) {
+	    System.out.println("El archivo Clientes.txt no debe ser eliminado");
+	    System.out.println("¿A que empleado quieres depositarle dinero?: ");
+	}
+
+        
+	BufferedReader lecturaMenu = new BufferedReader(new FileReader("Clientes.txt"));
+	String str;
+        String[] sep;
+	while((str = lecturaMenu.readLine()) != null) {
+            
+            
+	    System.out.println(str);
+            
+            //sep = str.split("-");
+            /*
+                for(String aaa: sep)
+                System.out.println(aaa);
+            */
+            //ejemplito.spliterator();
+	    ejemplar.add(str);
+	    System.out.println(ejemplar.size());
+	}
+	lecturaMenu.close();
+	System.out.println("¿cual quieres elegir?");
+	Scanner inputt = new Scanner(System.in);
+	int borrador = inputt.nextInt();
+	if(borrador > ejemplar.size()) {
+	    System.out.println("No hay tantos indices");
+	    return;
+	} else {
+	
+            
+        System.out.println("Has elegido al empleado: ");    
+            
+        String jeje = ejemplar.get(borrador - 1).toString();
+        System.out.println(jeje);
+        
+        sep = jeje.split("-");
+        for(String aaa:sep)
+            System.out.println(aaa);
+        
+        System.out.println("Tienes actualmente: ");
+        
+        System.out.println(sep[1]);
+        String vgaro = sep[1];
+        double varo = Double.parseDouble(vgaro);
+        //ejemplito.remove(borrador-1);
+        
+        System.out.println("¿Cuánto dinero quieres depositar?: ");
+        
+        Scanner varador = new Scanner(System.in);
+        
+        double varr = varador.nextDouble();
+        
+        double varoF = varo + varr;
+        
+        
+        String nombreee = sep[0];
+        
+        Object completo = nombreee + "-" + varoF;
+        
+        ejemplar.set(borrador-1, completo);
+        
+        
+        
+        
+        
+        /*
+        double dd = 0;
+        dd = (double) jeje;
+        
+        System.out.println("Saca varo");
+        
+        double sacador = inputt.nextDouble();
+        double money = dd - sacador;
+        System.out.println(money);
+        */
+        //double converse = Double.parseDouble(jeje);
+	//ejemplito.remove(borrador-1);
+	
+
+	/*
+	FileWriter hope = new FileWriter("Clientes.txt");
+	for(String strr: ejempli) {
+	    hope.write(strr);
+	}
+	hope.close();
+	*/
+	FileWriter stt = new FileWriter("Clientes.txt");
+	int tam = ejemplar.size();
+	for(int i = 0; i < tam; i++){
+	    String strr = ejemplar.get(i).toString();
+	    stt.write(strr);
+	    if(i < tam - 1)
+		stt.write("\n");
+	}
+	stt.close();
+	System.out.println(ejemplar);
+	}
+        }catch(Exception e){
+            System.out.println("Ha ocurrido un error con el archivo");
+        }                break;
+                
+                
+        
             default:
                 System.out.println("Ha ocurrido un error al elegir opciones");
+                break;
 }         
 }            
     }
